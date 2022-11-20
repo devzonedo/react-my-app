@@ -14,11 +14,18 @@ const ExpenseForm = () => {
         enteredDate:''
     })
 
+
 const amountChangeHander = (event) => {
-    setUserInput({
-        ...userInput,
-        enteredAmount:event.target.value
+    // setUserInput({
+    //     ...userInput,
+    //     enteredAmount:event.target.value
+    // })
+
+    //use this approch depends state on previous state
+    setUserInput((prevState)=> {
+        return{...prevState,enteredAmount:event.target.value}
     })
+    console.log(userInput);
 }
 
 const titeChangeHandler = (event) => {
@@ -35,7 +42,15 @@ const dateChangeHandler = (event) => {
     })
 }
 
-    return(<form>
+
+
+const submitHandler = (event) => {
+    event.preventDefault(); // to avoid page reload
+    const expenseData = userInput;
+    console.log(expenseData);
+}
+
+    return(<form onSubmit={submitHandler}>
         <div className='new-expense__controls'>
             <div className='new-expense__control'>
                 <label>Title</label>
