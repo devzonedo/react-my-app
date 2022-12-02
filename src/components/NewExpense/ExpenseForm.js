@@ -40,7 +40,10 @@ const titeChangeHandler = (event) => {
 }
 
 const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value);
+    //const d = new Date(2021, 5, 12);
+    console.log(event.target.value);
+    // setEnteredDate(d);
+    setEnteredDate(new Date(event.target.value));
 
     // setUserInput({
     //     ...userInput,
@@ -59,9 +62,12 @@ const submitHandler = (event) => {
         amount: enteredAmount,
         date: enteredDate
     }
+   
     console.log(expenseData);
 
+
     props.onSaveExpenseData(expenseData);
+
     setEnteredAmount('');
     setEnteredDate('');
     setEnteredTitle('');
