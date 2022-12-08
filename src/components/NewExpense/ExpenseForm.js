@@ -56,7 +56,7 @@ const dateChangeHandler = (event) => {
 const submitHandler = (event) => {
     event.preventDefault(); // to avoid page reload
     //const expenseData = userInput;
-
+    
     const expenseData = {
         title: enteredTitle,
         amount: enteredAmount,

@@ -11,6 +11,13 @@ function Expenses(props) {
     console.log("Expenses.ja");
     console.log(selectedYear);
     setFilteredYear(selectedYear);
+
+    //year found iterate props.items
+    const filteredList =  props.items.filter(expense => expense.title === 'JAVA');
+    console.log(filteredList)
+    props.onUpdateExpense(filteredList);
+
+
   };
 
   return (
@@ -24,6 +31,7 @@ function Expenses(props) {
         {props.items.map((expense) => (
           <ExpenseItem
             key={expense.id}
+            id={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}

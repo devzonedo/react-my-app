@@ -6,7 +6,7 @@ import NewExpense from "./components/NewExpense/NewExpense";
 
 const DUMMY_EXPENSES = [
   {
-    id: 'e1',
+    id: 1,
     title: 'JAVA',
     amount: 94.12,
     date: new Date(2020, 7, 14),
@@ -44,11 +44,17 @@ const addExpenseHandler = expense => {
   });
 }
 
+
+
+const updateExpenseHandler = expenses => {
+  setExpenses(expenses);
+}
+
   return (
 
     <div className="App">
         <NewExpense onAddExpense={addExpenseHandler}/>
-        <Expenses items={expenses} />
+        <Expenses items={expenses} onUpdateExpense={updateExpenseHandler} />
 
     </div>
   );
