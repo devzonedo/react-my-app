@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ExpenseAdd from "./components/Expenses/ExpenseAdd";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
@@ -34,7 +35,8 @@ const DUMMY_EXPENSES = [
 function App() {
 
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
-  
+  const [btnstatus,setBtnstatus] = useState(false);
+
 
 const addExpenseHandler = expense => {
   console.log('In App.js');
@@ -44,12 +46,26 @@ const addExpenseHandler = expense => {
   });
 }
 
+
+const showAddExpenseHandler = (btns) => {
+console.log('>>showAddExpenseHandler')
+setBtnstatus(btns);
+}
+
+
+
+
+let cardContent =  <ExpenseAdd onShowAddExpenseHandler={showAddExpenseHandler}/>
+if(btnstatus){
+  cardContent = <NewExpense onAddExpense={addExpenseHandler} onShowAddExpenseHandler={showAddExpenseHandler}/>
+}
+
+
   return (
-
-    <div className="App">
-        <NewExpense onAddExpense={addExpenseHandler}/>
+    <div className="App">  
+        {cardContent}
+        
         <Expenses items={expenses} />
-
     </div>
   );
 }

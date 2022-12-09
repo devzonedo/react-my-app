@@ -17,7 +17,7 @@ function NewExpense(props){
 
 
     return(<div className="new-expense">
-     <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+     <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onHideButton={props.onShowAddExpenseHandler}/>
     </div>)
 }
 

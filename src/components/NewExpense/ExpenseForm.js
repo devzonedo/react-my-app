@@ -74,6 +74,13 @@ const submitHandler = (event) => {
     
 }
 
+
+
+
+const expenseHideHandler = () => {
+    props.onHideButton(false)
+}
+
     return(<form onSubmit={submitHandler}>
         <div className='new-expense__controls'>
             <div className='new-expense__control'>
@@ -92,6 +99,7 @@ const submitHandler = (event) => {
                 <input type="date" value={enteredDate} min="2019-01-01" max="2023-12-31" onChange={dateChangeHandler} />
             </div>
             <div className='new-expense__actions'>
+                <button onClick={expenseHideHandler}>Cancel</button>
                 <button type='submit'>Add Expense</button>
             </div>
         </div>
