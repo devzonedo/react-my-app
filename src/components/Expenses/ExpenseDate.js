@@ -9,12 +9,12 @@ function ExpenseDate(props) {
   //var dt = new Date(props.date);
   const year = props.date.getFullYear();
 
-  console.log("-Date Obj------------------");
-  console.log('props.date:'+props.date);
-  console.log(month);
-  console.log(day);
-  console.log(year);
-  console.log("-------------------");
+  // console.log("-Date Obj------------------");
+  // console.log('props.date:'+props.date);
+  // console.log(month);
+  // console.log(day);
+  // console.log(year);
+  // console.log("-------------------");
 
   return (
     <div className="expense-date">
