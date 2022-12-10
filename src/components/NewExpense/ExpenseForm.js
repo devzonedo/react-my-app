@@ -71,7 +71,7 @@ const submitHandler = (event) => {
     setEnteredAmount('');
     setEnteredDate('');
     setEnteredTitle('');
-    
+    props.onHideButton(false);
 }
 
 
